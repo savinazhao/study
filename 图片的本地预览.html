@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="file" name="avatar" id="avatarFile">
+        <img src="" alt="" id="imgView">
+        
+    </div>
+</body>
+</html>
+<script src="./node_modules/jquery/dist/jquery.js"></script>
+<script>
+    $('#avatarFile').on('change',function(){
+        //获取选中的图片对象
+        var file = this.files[0];
+        console.log(file);
+        //将图片文件转成URL
+        var url = URL.createObjectURL(file);
+        console.log(url);
+        $('#imgView').attr('src',url);
+    })
+</script>
